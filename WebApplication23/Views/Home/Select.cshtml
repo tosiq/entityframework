@@ -1,0 +1,32 @@
+﻿
+    @model WebApplication23.Models.abc
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>Select</h2>
+<a href="@Url.Action("Index","Home")" class="btn btn-success">Create</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PASSWORD</th>
+        <th>AGE</th>
+        <th>ACTION</th>
+    </tr>
+ @foreach (var item in Model)
+ {
+       <tr>
+           <td>@item.id</td>
+           <td>@item.name</td>
+           <td>@item.password</td>
+           <td>@item.age</td>
+           <td><a href="@Url.Action("Delete","Home",new {id=item.id })" class="btn btn-danger" > Delete</a><a href="@Url.Action("Edit","Home",new {id=item.id })" class="btn btn-primary" >Edit</a></td>
+       </tr>
+
+   }
+
+</table>
+

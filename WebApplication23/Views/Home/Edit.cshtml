@@ -1,0 +1,28 @@
+﻿@model WebApplication23.Models.Depart
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.id)<br />
+    @Html.TextBoxFor(a => a.id, new { type = "text", required = "required", placeholder = "ID..", @class = "form-control" })<br />
+
+    @Html.LabelFor(a => a.name)<br />
+    @Html.TextBoxFor(a => a.name, new { type = "text", required = "required", placeholder = "Name ..", @class = "form-control" })<br />
+
+    @Html.LabelFor(a => a.password)<br />
+    @Html.TextBoxFor(a => a.password, new { type = "password", required = "required", placeholder = "Password..", @class = "form-control" })<br />
+
+    @Html.LabelFor(a => a.age)<br />
+    @Html.TextBoxFor(a => a.age, new { type = "number", required = "required", placeholder = "age..", @class = "form-control" })<br />
+
+
+    <input type="submit" class="btn btn-danger" />
+}
+
+
+
+
